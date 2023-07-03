@@ -1,0 +1,27 @@
+Para rodar a aplicação será necessária ter instalado no computador o node.js e npm.
+
+As bibliotes utilizadas foram:
+
+npm install express 
+
+npm install ejs 
+
+npm install multer 
+
+npm install socket.io 
+
+////////////////-----------///////////////
+
+Para rodar a aplicação será necessário abrir o Prompt de comando (cmd) entrar dentro da pasta aonde o server está localizado, escrever node sever.js e rodar, assim o servidor rodará no http://localhost:8081/ do seu computador, para entrar nele, apenas abra uma aba e coloque o http escrito anteriormente.
+
+
+OBS: Caso não saiba como entrar até o repertorio do servidor, darei um exemplo:
+
+1° Abrir o Prompt de comando;
+
+2° Escrever nele, cd desktop dar enter;
+
+3° Após isso escrever cd "Caminho da pasta" dar enter;
+
+4° Escrever node server.js e dar enter, e o servido retornará uma mensagem mostrando aonde o servidor está sendo executado. 
+ 

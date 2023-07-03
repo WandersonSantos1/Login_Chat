@@ -1,0 +1,423 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 70px;
+    grid-template-areas: 
+        "A A A"
+        "C C C"
+    ;
+}
+
+.header-part {
+    grid-area: A;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  @keyframes animatedBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .header-part::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #d0d0d0, rgb(158, 158, 158));
+    z-index: -1;
+
+  }
+  
+  
+
+.middle-part {
+    grid-area: C;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header-itens {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    width: auto;
+    position: relative;
+}
+
+.header-itens img {
+    width: 30px;
+    padding: 5px;
+    margin: 8px;
+
+}
+
+.profile-icon {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50px;
+    cursor: pointer;   
+}
+
+.add-icon {
+    cursor: pointer;   
+}
+
+.add-icon:hover {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+/* --------- Aba menu perfil do usúario ---------*/
+.perfil-options {
+    display: none;
+    width: 140px;
+    background-color: #e3e3e3;
+    box-shadow: rgba(0, 0, 0, 0.351) 0px 5px 12px;
+    border-radius: 10px;
+    position: absolute;
+    top: 70px;
+    right: 15px;
+}
+
+.perfil-options ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex-direction: column;
+    list-style: none;
+    cursor: pointer;
+}
+
+.perfil-options li {
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    transition: transform .2s;
+}
+
+.perfil-options a {
+    color: #000000;
+    font-weight: 500;
+    text-decoration: none;
+
+}
+
+.perfil-options li:hover {
+    transform: scale(1.05);
+}
+
+/* Estilização para mostrar e sumir com as DIVs do "middle-part"*/
+.boxs {
+    width: 96%;
+    height: 100%;
+    display: none;
+    margin-left: 2%;
+}
+
+.visivel {
+    display: block;
+}
+
+/* ------------------------------------------------------------*/
+
+
+#box1 {
+    box-shadow: rgba(255, 255, 255, 0.45) 0px 5px 15px;
+}
+
+.box_1 {
+    display: block;
+    width: 100%;
+    height: 88%;
+    background-color:#FFFFFF
+}
+
+.chat-principal-tela::-webkit-scrollbar {
+    width: 12px;              
+}
+  
+.chat-principal-tela::-webkit-scrollbar-track {
+    background: #ffffff; 
+}
+  
+.chat-principal-tela::-webkit-scrollbar-thumb {
+    background-color: #469536;    
+    border-radius: 20px;       
+    border: 1px solid black;  
+    height: 280px;
+}
+
+.chat-principal-tela {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    gap: 15px;
+}
+
+.tex-init-chat {
+    background-color: #d6d6d6d9;
+    box-shadow: rgba(0, 0, 0, 0.351) 0px 5px 12px;
+    border-radius: 10px;
+    text-align: center;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 14pt;
+    padding: 10px;
+}
+
+
+.mensagens {
+    max-width: 80%;
+    height: auto;
+    padding: 8px;
+    border: none;
+    background-color: hsla(110, 47%, 40%, 0.230);
+    box-shadow: rgba(0, 0, 0, 0.351) 0px 5px 12px;
+    border-radius: 10px;
+}
+
+.mensagem-ida {
+    text-align: end;
+    align-self: flex-end;
+    background-color: #a6f795;
+}
+.conteudo-msg {
+    text-align: start;
+    word-wrap: break-word;
+}
+.mensagem-volta {
+    text-align: start;
+    align-self: flex-start;
+    background-color: #cbcbcb;
+}
+
+.nome-msg {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+
+/*-----*/
+.emoji-list {
+    display: none;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: hsla(110, 47%, 40%, 0.330);
+    border-radius: 5px;
+    position: absolute;
+    margin-bottom: 150px;
+    right: 71px;
+}
+.emoji-list-on {
+    display: grid;
+}
+#emojis {
+    cursor: pointer;
+}
+.input-msg {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.emoji-icone {
+    width: 25px;
+    position: absolute;
+    right: 90px;
+    cursor: pointer;
+}
+
+.arquivo-input {
+    display: none;
+}
+
+.arquivo-label {
+    width: 25px;
+    position: absolute;
+    right: 125px;
+    top: 17px;
+
+}
+
+.arquivo-label img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+.input-msg textarea {
+    flex: 1;
+    padding: 10px;
+    padding-right: 35px;
+    resize: none; 
+    overflow: auto;
+    max-height: 60px;
+    font-size: 12pt;
+    margin-left: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #d5d5d5ec;
+    box-shadow: rgba(0, 0, 0, 0.451) 0px 5px 12px;
+}
+
+/*-- Configurações do Textarea e da sua barra de scroll --*/
+.input-msg textarea:focus {
+    outline: none;
+    border-bottom: #469536 solid 1px;
+}
+
+.box-entrada-texto::-webkit-scrollbar {
+    width: 12px;              
+}
+  
+.box-entrada-texto::-webkit-scrollbar-track {
+    background: rgb(209, 209, 209); 
+}
+  
+.box-entrada-texto::-webkit-scrollbar-thumb {
+    background-color: #469536;    
+    border-radius: 20px;       
+    border: 1px solid black;  
+    height: 30px;
+}
+
+/*------------------------------------------------------*/
+
+.btn-enviar-msg {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin: 0px 5px 0px 5px;
+    background-color: #979797;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+
+/*----- Estilo para botão de enviar "Acender" -----*/
+
+.efeito-enviar {
+    background-color: #469536;
+}
+
+.btn-alterar-modo img{
+
+
+    width: 40px;
+    position: absolute;
+    top: -3px;
+    right: -13px;
+
+
+
+ 
+}
+
+
+
+.btn-enviar-msg img {
+    width: 20px;
+}
+
+.btn-alterar-modo{
+
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+  }
+
+
+/* ---------------------------------------------- *
+
+
+/* Estilos para o modo escuro */
+.dark-mode {
+    background-color: #181818;
+    color: #ffffff;
+  }
+  
+  .dark-mode .header-part::before {
+    background: linear-gradient(to right, #000000, #2d2d2d);
+  }
+  
+  .dark-mode .chat-principal-tela::-webkit-scrollbar-thumb {
+    background-color: #72b54d;
+    border-color: #ffffff;
+  }
+  
+  .dark-mode .tex-init-chat {
+    background-color: #3d3d3d;
+    color: #ffffff;
+  }
+  
+  .dark-mode .mensagens {
+    background-color: #333333;
+  }
+  
+  .dark-mode .mensagem-ida {
+    background-color: #366c31;
+  }
+  
+  .dark-mode .mensagem-volta {
+    background-color: #515151;
+  }
+  
+  .dark-mode .input-msg textarea {
+    background-color: #222222;
+    color: #ffffff;
+    border-color: #72b54d;
+  }
+  
+  .dark-mode .btn-enviar-msg {
+    background-color: #72b54d;
+  }
+  
+  .dark-mode .emoji-list {
+    background-color: #444444;
+  }
+  
+  .dark-mode .arquivo-label {
+    filter: invert(1);
+  }
+
+  .dark-mode .box_1{
+
+    background-color: #222222;
+
+  }
+

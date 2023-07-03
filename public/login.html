@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/login.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
+    <title>Chat</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box-form">
+            <form action="" method="post" id="loginForm">
+                <div class="header-form">
+                    <h2>Entrar</h2>
+                    <span class="green-line"></span>
+                </div>
+
+                <div class="main-form">
+                    <span class="error-msg">Usuário ou senha incorretos</span>
+                    <label for="ID_Ident">Identificação</label>
+                    <input type="text" id="ID_Ident" class="error-line erl_1" required>
+
+                    <label for="ID_Password">Senha</label>
+                    <input type="password" name="" id="ID_Password" class="error-line erl_2" required>
+                </div>
+
+                <div class="box-btn">
+                    <button type="submit" class="btn-submit" id="ID_button">Entrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal">
+
+    </div>
+
+    <script>
+
+    </script>
+    <script src="Scripts/script_login.js"></script>
+</body>
+</html>

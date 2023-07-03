@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR" id="html">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/reset.css">
+  <link rel="stylesheet" href="CSS/chat.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
+  
+  <title>Chat</title>
+</head>
+<body>
+  <div class="container" id="container">
+
+
+    <div class="header-part">
+      <div class="logo">
+        <h2 style="text-align: center; font-weight: 500;">CHAT</h2>
+      </div>
+
+      <div class="header-itens">
+        <span><img src="IMG/mais.svg" alt="" class="add-icon"></span>
+        <img src="IMG/do-utilizador.png" alt="" class="profile-icon" onclick="profileList()">
+        <button onclick="toggleDarkMode()" id="AlterarModo" class="btn-alterar-modo"><img src="IMG/icone_alterar.png" alt=""></button>
+
+      </div>
+    </div>
+    <div class="perfil-options">
+      <ul>
+        <li><a href="perfil.html">Meu Perfil</a></li>
+        <li><a href="config.html">Configurações</a></li>
+      </ul>
+    </div>
+
+    <div class="middle-part">
+      <div class="boxs visivel" id="box1">
+        <div class="box_1">
+          <div class="chat-principal-tela" id="tela-chat">
+            <span class="tex-init-chat">Bem vindo(a) ao chat</span>
+          </div>
+        </div>
+
+        <form method="post" enctype="multipart/form-data" action="/" id="upload-form">
+          <div class="input-msg">
+            <div class="emoji-list">
+              <span id="emojis">🙂</span>
+              <span id="emojis">😃</span>
+              <span id="emojis">😁</span>
+              <span id="emojis">😆</span>
+              <span id="emojis">😂</span>
+              <span id="emojis">🤣</span>
+              <span id="emojis">😅</span>
+              <span id="emojis">😊</span>
+              <span id="emojis">🤔</span>
+              <span id="emojis">🤨</span>
+              <span id="emojis">😮</span>
+              <span id="emojis">😥</span>
+              <span id="emojis">😰</span>
+              <span id="emojis">😱</span>
+              <span id="emojis">😡</span>
+              <span id="emojis">❤️</span>
+              <span id="emojis">👋</span>
+              <span id="emojis">👍</span>
+              <span id="emojis">👎</span>
+            </div>
+          </div>
+
+          <div class="input-msg">
+            <textarea name="" id="entrada-texto" class="box-entrada-texto" placeholder="Mensagem..."></textarea>
+            <img src="IMG/emojis_icon.png" alt="" class="emoji-icone">
+            <button id="enviar-msg" class="btn-enviar-msg"><img src="IMG/enviar-btn.png" alt=""></button>
+            <div class="arquivo-input">
+              <input type="file" name="file" id="arquivo">
+              <span id="nome-arquivo"></span>  
+            </div>
+            <div>
+
+            </div>
+            <label for="arquivo" class="arquivo-label"><img src="IMG/archive.jpeg" alt=""></label>
+          </div>
+        </form>
+      </div> 
+    </div>
+  </div>
+
+
+  <script src="Scripts/script_chat.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const fileInput = document.getElementById('arquivo');
+      const nomeArquivo = document.getElementById('nome-arquivo');
+
+      fileInput.addEventListener('change', () => {
+        if (fileInput.files.length > 0) {
+          nomeArquivo.textContent = fileInput.files[0].name;
+        } else {
+          nomeArquivo.textContent = '';
+        }
+      });
+
+      const form = document.getElementById('upload-form');
+
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+
+        if (fileInput.files.length > 0) {
+          const formData = new FormData(form);
+          fetch('/', {
+            method: 'POST',
+            body: formData
+          })
+            .then(response => response.text())
+            .then(message => {
+              alert(message);
+              fileInput.value = ''; // Limpa o conteúdo do campo de arquivo
+              nomeArquivo.textContent = ''; // Limpa o nome do arquivo exibido
+            })
+            .catch(error => {
+              console.error('Erro ao enviar arquivo:', error);
+            });
+        } else {
+          console.log('Selecione um arquivo antes de enviar.');
+        }
+      });
+    });
+  </script>
+  <script>
+
+    // Função para alternar entre os modos claro e escuro
+    function toggleDarkMode() {
+      const htmlElement = document.getElementById('html');
+      const containerElement = document.getElementById('container');
+      
+      htmlElement.classList.toggle('dark-mode');
+      containerElement.classList.toggle('dark-mode');
+    }
+  </script>
+
+  </script>
+</body>
+</html>
