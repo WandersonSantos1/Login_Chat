@@ -1,27 +1,59 @@
-Para rodar a aplicação será necessária ter instalado no computador o node.js e npm.
+Aplicação de Chat em Tempo Real
+Este é um aplicativo de chat em tempo real desenvolvido com Node.js e Socket.IO. Ele permite que os usuários se comuniquem em salas de bate-papo separadas e realizem login usando credenciais pré-definidas.
 
-As bibliotes utilizadas foram:
+Pré-requisitos
+Antes de rodar a aplicação, certifique-se de ter o Node.js e o npm instalados no seu computador.
 
-npm install express 
+Instalação das Dependências
+Para instalar as bibliotecas necessárias, execute os seguintes comandos no terminal:
 
-npm install ejs 
+npm install express ejs multer socket.io
 
-npm install multer 
+Como Rodar a Aplicação
+Para iniciar o servidor, siga os passos abaixo:
 
-npm install socket.io 
+Abra o Prompt de Comando (cmd).
+Navegue até a pasta onde o servidor está localizado usando o comando cd.Exemplo:
 
-////////////////-----------///////////////
+cd desktop
+cd caminho_da_pasta
 
-Para rodar a aplicação será necessário abrir o Prompt de comando (cmd) entrar dentro da pasta aonde o server está localizado, escrever node sever.js e rodar, assim o servidor rodará no http://localhost:8081/ do seu computador, para entrar nele, apenas abra uma aba e coloque o http escrito anteriormente.
+Após navegar até a pasta do servidor, execute o seguinte comando para iniciar o servidor:
 
+node server.js
 
-OBS: Caso não saiba como entrar até o repertorio do servidor, darei um exemplo:
+O servidor será iniciado e você receberá uma mensagem indicando que está rodando em http://localhost:8081/.
+Abra um navegador da web e digite o seguinte endereço na barra de endereços:
 
-1° Abrir o Prompt de comando;
+http://localhost:8081/
 
-2° Escrever nele, cd desktop dar enter;
+Isso abrirá a página inicial da aplicação de chat.
 
-3° Após isso escrever cd "Caminho da pasta" dar enter;
+Login
+Para fazer login na página inicial, utilize as seguintes credenciais:
 
-4° Escrever node server.js e dar enter, e o servido retornará uma mensagem mostrando aonde o servidor está sendo executado. 
- 
+{
+Usuário: Rosa
+Senha: 123
+}
+
+ou
+
+{
+Usuário: Lucia
+Senha: 123
+}
+
+Você também pode abrir a aplicação em duas abas diferentes e se comunicar em tempo real através do chat.
+
+Estrutura do Projeto
+server.js: Arquivo principal do servidor Node.js.
+views/: Pasta contendo os arquivos de visualização EJS.
+public/: Pasta contendo arquivos estáticos como CSS e scripts JavaScript.
+uploads/: Pasta onde os arquivos enviados pelos usuários são armazenados temporariamente.
+assets/: Pasta com recursos adicionais como imagens ou ícones.
+
+Notas Adicionais
+Certifique-se de que a porta 8081 esteja disponível para o servidor.
+Os arquivos enviados pelos usuários são armazenados temporariamente na pasta "uploads/".
+Se você tiver alguma dúvida ou encontrar problemas, sinta-se à vontade para entrar em contato.
